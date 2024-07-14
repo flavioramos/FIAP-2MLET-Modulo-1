@@ -91,6 +91,7 @@ def load_all():
     load_data(ProcessaSemclass, 'control', ['cultivar'], '\t')
     load_data(ProcessaViniferas, 'control', ['cultivar'], ';')
     load_data(Producao, 'control', ['produto'], ';')
+    print("Wine CSV data loaded.")
 
 
 def get_by_year(modelName, year):

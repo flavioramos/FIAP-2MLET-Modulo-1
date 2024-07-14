@@ -38,14 +38,14 @@ def download(url, name):
     file = f'{root_cache_directory}/{name}'
     if os.path.exists(file):
         lines = open(file, 'r', encoding='iso-8859-1').read()
-        print(f'{name} already exists...')
+        print(f'{name} CSV found, checking... ', end='')
         if lines[-1] == '\n':
-            print(f'{name} OK, skipped.')
+            print('OK.')
             return
         else:
-            print(f'{name} seems invalid!')
+            print('Invalid!')
 
-    print(f'Downloading {url}...')
+    print(f'Downloading {url}... ', end='')
 
     try:
         response = requests.get(url)
@@ -53,9 +53,9 @@ def download(url, name):
             content = response.text
             with open(file, 'w', encoding='iso-8859-1') as file:
                 file.write(content)
-            print(f'{url} downloaded and saved successfully.')
+            print('Success!')
         else:
-            print(f'{url} failed to download CSV. Status code: {response.status_code}')
+            print(f'Failed. Status code: {response.status_code}')
     except Exception as e:
         if os.path.exists(file):
             os.remove(file)

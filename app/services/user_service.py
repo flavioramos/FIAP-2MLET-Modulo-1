@@ -22,5 +22,8 @@ def init_db():
     user.set_password("password")
 
     if not db.session.query(User).filter_by(email=user.email).first():
+        print("User admin created.")
         db.session.add(user)
         db.session.commit()
+    else:
+        print("User exists.")
