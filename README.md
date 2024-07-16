@@ -40,8 +40,9 @@ API para disponiblizar dados extraídos de CSV do site da Embrapa.
 
 2. **Endpoints e documentação:**
 
-  Swagger: 'http://localhost:5000/apidocs'
-  Postman: '/postman/FIAP - WineScapper.postman_collection.json'
+   Swagger: 'http://localhost:5000/apidocs'
+   
+   Postman: '/postman/FIAP - WineScapper.postman_collection.json'
   
 
 ## Contribuição
