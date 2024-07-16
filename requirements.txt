@@ -1,0 +1,10 @@
+alembic==1.13.1
+flasgger==0.9.7.1
+Flask==3.0.3
+Flask_JWT_Extended==4.6.0
+Flask_Migrate==4.0.7
+flask_sqlalchemy==3.1.1
+pandas==2.2.2
+Requests==2.32.3
+SQLAlchemy==2.0.31
+Werkzeug==3.0.3
