@@ -1,3 +1,6 @@
+url_prefix = "/api/v1"
+
+
 def register_routes(app):
     from .user_routes import user_bp
     from .auth_routes import auth_bp

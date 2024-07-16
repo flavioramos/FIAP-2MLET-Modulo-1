@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flasgger import Swagger
+from flask import Flask
 from werkzeug.routing import BaseConverter
 
 from .extensions import db, migrate, jwt
@@ -15,6 +16,29 @@ class RegexConverter(BaseConverter):
 
 def create_app():
     app = Flask(__name__)
+    swagger = Swagger(app, template={
+        "swagger": "2.0",
+        "info": {
+            "title": "Wine Scrapper API",
+            "description": "Wine production statistics extracted from Embrapa's website",
+            "version": "1.0.0"
+        },
+        "basePath": "/api/v1",
+        "securityDefinitions": {
+            "BearerAuth": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "scheme": "bearer",
+                "description": "Format: Bearer <access_token>"
+            }
+        },
+        "security": [
+            {
+                "BearerAuth": [],
+            }
+        ]
+    })
+
     app.config.from_object('app.config.Config')
     app.url_map.converters['regex'] = RegexConverter
 
@@ -39,4 +63,3 @@ def create_app():
         wine_service.load_all()
 
     return app
-
