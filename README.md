@@ -4,7 +4,7 @@ API para disponiblizar dados extraídos de CSV do site da Embrapa.
 
 ## Arquitetura
 
-Overview: https://tinyurl.com/winescrapper-api-architecture
+Overview da arquitetura com possíveis cenários de utilização: https://tinyurl.com/winescrapper-api-architecture
 
 ## Demonstração
 
