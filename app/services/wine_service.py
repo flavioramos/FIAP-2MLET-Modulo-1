@@ -37,6 +37,10 @@ categories = [
 
 
 def transform_string(input_string):
+    """
+    Remove special characters
+    """
+
     normalized_string = unicodedata.normalize('NFKD', input_string)
     ascii_string = normalized_string.encode('ASCII', 'ignore').decode('utf-8')
     return ascii_string.lower()
@@ -77,6 +81,7 @@ def load_data(model, key_field, model_fields, delimiter):
 
 
 def load_all():
+    # Import data from every CSV file
     load_data(Comercio, 'control', ['Produto'], ';')
     load_data(ExpEspumantes, 'País', [], ';')
     load_data(ExpSuco, 'País', [], ';')
@@ -125,5 +130,8 @@ def get_all():
 
 
 def check_valid_year(year):
+    """
+    Check if requested year is within range
+    """
     if year < start_year or year > end_year:
         raise ValueError(f"Year must be between {start_year} and {end_year}")

@@ -3,10 +3,17 @@ from app.extensions import db
 
 
 def get_all_users():
+    """
+    Returns every existing user
+    """
+
     return User.query.all()
 
 
 def create_user(user_data):
+    """
+    Create new user
+    """
     new_user = User(
         name=user_data['name'],
         email=user_data['email'],
@@ -18,6 +25,9 @@ def create_user(user_data):
 
 
 def init_db():
+    """
+    Create admin user, if it doesn't already exist.
+    """
     user = User(name="Admin", email="admin@example.com")
     user.set_password("password")
 

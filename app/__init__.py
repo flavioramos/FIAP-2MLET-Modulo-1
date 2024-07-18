@@ -50,14 +50,23 @@ def create_app():
 
     @app.cli.command("clear-cache")
     def clear_cache():
+        """
+        Deletes all CSV files from /cache directory.
+        """
         cache_service.clear_cache()
 
     @app.cli.command("build-cache")
     def build_cache():
+        """
+        Download missing CSV files from Embrapa website.
+        """
         cache_service.build_cache()
 
     @app.cli.command("init-db")
     def init_db():
+        """
+        Create admin user and import CSV data into SQL database
+        """
         db.create_all()
         user_service.init_db()
         wine_service.load_all()

@@ -24,11 +24,18 @@ files = [
 
 
 def clear_cache():
+    """
+    Deletes all CSV files from /cache directory.
+    """
+
     if (os.path.exists(root_cache_directory)):
         shutil.rmtree(root_cache_directory)
 
 
 def build_cache():
+    """
+    Download CSV files
+    """
     os.makedirs(root_cache_directory, exist_ok=True)
     for file in files:
         download(file["url"], file["name"])
@@ -37,12 +44,17 @@ def build_cache():
 def download(url, name):
     file = f'{root_cache_directory}/{name}'
     if os.path.exists(file):
+        # File already exists
         lines = open(file, 'r', encoding='iso-8859-1').read()
         print(f'{name} CSV found, checking... ', end='')
+
+        # Assuming the file is not corrupt if ends with new lien
         if lines[-1] == '\n':
+            # Nothing else to do.
             print('OK.')
             return
         else:
+            # Invalid, proceed with download.
             print('Invalid!')
 
     print(f'Downloading {url}...')
