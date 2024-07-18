@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d59d95d9-9d16-4d4a-baf9-6f049fa3af63",
+		"_postman_id": "6aff63d2-ef61-4a0e-931c-27569130bd0c",
 		"name": "FIAP - WineScapper",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "384806"
@@ -278,6 +278,14 @@
 		{
 			"key": "base_url",
 			"value": "http://127.0.0.1:5000/api/v1"
+		},
+		{
+			"key": "server",
+			"value": "http://127.0.0.1:5000/"
+		},
+		{
+			"key": "context",
+			"value": "api/v1"
 		}
 	]
 }
