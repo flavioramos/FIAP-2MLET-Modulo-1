@@ -45,7 +45,7 @@ def download(url, name):
         else:
             print('Invalid!')
 
-    print(f'Downloading {url}... ', end='')
+    print(f'Downloading {url}...')
 
     try:
         response = requests.get(url)
