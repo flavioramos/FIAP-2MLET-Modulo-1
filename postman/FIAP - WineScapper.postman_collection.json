@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6aff63d2-ef61-4a0e-931c-27569130bd0c",
+		"_postman_id": "e374ccd3-4031-497c-a9ff-c47dd8a12b55",
 		"name": "FIAP - WineScapper",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "384806"
@@ -18,7 +18,8 @@
 							"    pm.globals.set(\"auth\", pm.response.json().access_token)",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -39,15 +40,10 @@
 					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/auth/login",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/auth/login",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"auth",
 						"login"
@@ -72,15 +68,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/auth/logout",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/auth/logout",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"auth",
 						"logout"
@@ -105,15 +96,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/user/list",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/user/list",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"user",
 						"list"
@@ -148,15 +134,10 @@
 					"raw": "{\n    \"name\": \"Flavio\",\n    \"email\": \"flavio.ramos@gmail.com\",\n    \"password\": \"123mudar\"\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/user/create",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/user/create",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"user",
 						"create"
@@ -181,15 +162,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/wine/{{category}}",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/wine/{{category}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"wine",
 						"{{category}}"
@@ -214,15 +190,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/wine/{{category}}/{{year}}",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/wine/{{category}}/{{year}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"wine",
 						"{{category}}",
@@ -248,15 +219,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/wine/categories",
-					"protocol": "http",
+					"raw": "{{server}}{{context}}/wine/categories",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}{{context}}"
 					],
-					"port": "5000",
 					"path": [
 						"wine",
 						"categories"
@@ -281,11 +247,11 @@
 		},
 		{
 			"key": "server",
-			"value": "http://127.0.0.1:5000/"
+			"value": "http://127.0.0.1:5000"
 		},
 		{
 			"key": "context",
-			"value": "api/v1"
+			"value": "/api/v1"
 		}
 	]
 }
